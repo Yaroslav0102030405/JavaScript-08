@@ -111,3 +111,18 @@ user.showTag();
 // в 90% случаев у вас this будет ссылкаться на оригинальный обьект и вы не будете заморачиваться
 
 // Правило. При передаче методов callback контекст не сохранаеться не привязывается
+
+
+// разрешить получить геопозицию
+const onGetPositionSuccess = function (position) {
+  console.log(position)
+}
+
+const onGetPositionError = function (error) {
+console.log(error)
+}
+
+window.navigator.geolocation.getCurrentPosition(
+  onGetPositionSuccess,
+  onGetPositionError,
+)
