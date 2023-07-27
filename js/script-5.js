@@ -6,8 +6,6 @@
 // обьект это сложный тип
 // обьект это еще один тип данных
 
-
-
 // const playlist = {
 //     // свойство состоит из ключа и значения
 //     name: [1, 2, 3],
@@ -210,33 +208,33 @@
 // this - используеться только внутри метода не свойства. this - есть только у функции
 // Добавим еще новый трек
 const playlist = {
-    name: 'Мой супер плейлист',
-    rating: 5,
-    tracks: ['трек-1', 'трек-2', 'трек-3'],
-    trackCount: 3,
-    changeName(newName) {
-        console.log(this);
+  name: "Мой супер плейлист",
+  rating: 5,
+  tracks: ["трек-1", "трек-2", "трек-3"],
+  trackCount: 3,
+  changeName(newName) {
+    console.log(this);
 
-        this.name = newName;
-        // тут мы просто перезаписываем новое значение
-    },
-    addTrack(track) {
-        this.tracks.push(track);
-        // массив мы пушем 
-    },
-    updateRating(newRating) {
-        this.rating = newRating;
-    },
-    getTrackCount() {
-        return this.tracks.length;
-        // тут сделал метод который возвращает длину массива
-        // мы используем массив для подсчета длины количество треков это динамическое значение
-    },
+    this.name = newName;
+    // тут мы просто перезаписываем новое значение
+  },
+  addTrack(track) {
+    this.tracks.push(track);
+    // массив мы пушем
+  },
+  updateRating(newRating) {
+    this.rating = newRating;
+  },
+  getTrackCount() {
+    return this.tracks.length;
+    // тут сделал метод который возвращает длину массива
+    // мы используем массив для подсчета длины количество треков это динамическое значение
+  },
 };
 
-playlist.changeName('Новое имя');
+playlist.changeName("Новое имя");
 
-playlist.addTrack('Новый трек');
+playlist.addTrack("Новый трек");
 
 playlist.updateRating(4);
 
@@ -247,9 +245,9 @@ console.log(playlist);
 // for...in не использовать вообще
 
 const feedback = {
-    good: 5,
-    neutral: 10,
-    bad: 3,
+  good: 5,
+  neutral: 10,
+  bad: 3,
 };
 
 let totalFeedback = 0;
@@ -278,10 +276,10 @@ const values = Object.values(feedback);
 console.log(values);
 
 for (const value of values) {
-    console.log(value);
+  console.log(value);
 
-    totalFeedback += value;
-};
+  totalFeedback += value;
+}
 
 console.log(totalFeedback);
 
@@ -313,8 +311,8 @@ console.log(totalFeedback);
 //     console.table(friend.name);
 
 //     friend.newprop = 555
-    // массив сложных обьектов в for...of вы получаете ссылку на этот обьект
-    // можете изментять удалять обновить какое-то свойства 
+// массив сложных обьектов в for...of вы получаете ссылку на этот обьект
+// можете изментять удалять обновить какое-то свойства
 
 // console.table(friends)
 // тут мы полцили доступ к каждому обьекту
@@ -334,7 +332,6 @@ console.log(totalFeedback);
 
 //     return 'НЕ НАШЛИ!!!';
 // };
- 
 
 // console.log(findFrinedByName(friends, 'Poly'));
 // console.log(findFrinedByName(friends, 'Chelsy'));
@@ -353,11 +350,11 @@ console.log(totalFeedback);
 
 //     for (const friend of allFriends) {
 //         console.log(friend.name);
-        
+
 //         names.push(friend.name);
 //         // добавляет именна в наш пустой массив
 //     }
-    
+
 //     return names;
 //     // возвращает новый массив
 // };
@@ -389,7 +386,6 @@ console.log(totalFeedback);
 //     const onlineFriends = [];
 //     // в этот массив мы будем добавлять всех друзей которые онлайн
 
-
 //     for (const friend of allFriends) {
 //         console.log(friend);
 //         console.log(friend.online);
@@ -409,10 +405,10 @@ console.log(totalFeedback);
 // Задача 4 Получить всех друзей которые офлайн
 
 const friends = [
-    { name: 'Mango', online: false },
-    { name: 'Kiwi', online: true },
-    { name: 'Poly', online: false },
-    { name: 'Ajax', online: false },
+  { name: "Mango", online: false },
+  { name: "Kiwi", online: true },
+  { name: "Poly", online: false },
+  { name: "Ajax", online: false },
 ];
 
 friends[0].newprop = 123;
@@ -421,22 +417,21 @@ friends[2].newprop = 456;
 friends[3].newprop = 654;
 // добавили всем разное значение свойства
 
-console.table(friends)
+console.table(friends);
 
 const getOfflineFriends = function (allFriends) {
-    const offlineFriends = [];
-    // в этот массив мы будем добавлять всех друзей которые онлайн
+  const offlineFriends = [];
+  // в этот массив мы будем добавлять всех друзей которые онлайн
 
+  for (const friend of allFriends) {
+    console.log(friend.online);
 
-    for (const friend of allFriends) {
-        console.log(friend.online);
-
-        if (!friend.online) {
-            offlineFriends.push(friend);
-        }
+    if (!friend.online) {
+      offlineFriends.push(friend);
     }
+  }
 
-    return offlineFriends;
+  return offlineFriends;
 };
 
 console.log(getOfflineFriends(friends));
@@ -444,33 +439,32 @@ console.log(getOfflineFriends(friends));
 // Задача 5 Нужно получить друзей по статусу онлайн
 // Функция должна вернуть и онлай и офлайн друзей
 const getFriendsByStatus = function (allFriends) {
-    const friendsByStatus = {
-        online: [],
-        offline: [],
-    };
+  const friendsByStatus = {
+    online: [],
+    offline: [],
+  };
 
-    
-    for (const friend of allFriends) {
-        if (friend.online) {
-            friendsByStatus.online.push(friend);
-            continue;
-            // тут мы говорим циклу иди на следующую итерацию 
-        }
-
-        friendsByStatus.offline.push(friend);
+  for (const friend of allFriends) {
+    if (friend.online) {
+      friendsByStatus.online.push(friend);
+      continue;
+      // тут мы говорим циклу иди на следующую итерацию
     }
 
-    return friendsByStatus;
+    friendsByStatus.offline.push(friend);
+  }
+
+  return friendsByStatus;
 };
 
 console.log(getFriendsByStatus(friends));
 
 // Задача 6 Как мне узнать количества свойств в этом обьекте?
 const objectProperties = {
-    propertyOne: 1,
-    propertyTwo: 2,
-    propertyThree: 50,
-    propertyFour: 100,
+  propertyOne: 1,
+  propertyTwo: 2,
+  propertyThree: 50,
+  propertyFour: 100,
 };
 
 console.log(Object.keys(objectProperties).length);

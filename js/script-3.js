@@ -97,7 +97,7 @@
 // Передача по ссылке (сложный тип) массив
 // создается отдельное место в памяти где лежит массив
 // переменная с - храниться не сам массив а указатель ссылка на массив
- // происходжт перенаправление указателей на массив на одно и тоже место в памяти
+// происходжт перенаправление указателей на массив на одно и тоже место в памяти
 // const a = [1, 2, 3];
 // const b = a;
 
@@ -222,7 +222,7 @@
 
 // console.log(cart);
 
-// Задача 4 
+// Задача 4
 // Напиши скрпит который подсчитывает сумму всех четрных чисел в массиве
 // const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 14];
 // let total = 0;
@@ -353,7 +353,6 @@
 
 // console.log(message);
 
-
 // Второй вариант решения задачи
 // const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
 // const loginToFind = 'poly1scute';
@@ -377,7 +376,7 @@
 // const loginToFind = 'poly1scute';
 // let message = 'Пользователь ${loginToFind} не найден.';
 
-// console.log(logins.includes('poly1scute')); 
+// console.log(logins.includes('poly1scute'));
 // этот метод возвращает если найдено сопадение true
 // если совпадение не найдено false
 
@@ -386,10 +385,10 @@ const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
 const loginToFind = 'poly1scute';
 // let message = 'Пользователь ${loginToFind} не найден.';
 const message = logins.includes(loginToFind)
-    ? `Пользователь ${loginToFind} найден.`
-    : `Пользователь ${loginToFind} не найден.`;
+  ? `Пользователь ${loginToFind} найден.`
+  : `Пользователь ${loginToFind} не найден.`;
 
-console.log(message); 
+console.log(message);
 
 // Задача 7 Напиши скрипт поиска самого маленького числа в массиве
 // при условии что числа уникальные (не повторяються)
@@ -442,23 +441,23 @@ let invertedString = '';
 console.log(letters);
 
 for (const letter of letters) {
-    console.log(letter);
+  console.log(letter);
 
-    // if (letter === letter.toLowerCase()) {
-    //     console.log('Эта буква в нижнем регистре - ', letter);
-    //     invertedString += letter.toUpperCase();
-    // } else {
-    //     invertedString += letter.toLowerCase();
-    //     console.log('Эта буква в верхнем регистре! -', letter);
-    // }
+  // if (letter === letter.toLowerCase()) {
+  //     console.log('Эта буква в нижнем регистре - ', letter);
+  //     invertedString += letter.toUpperCase();
+  // } else {
+  //     invertedString += letter.toLowerCase();
+  //     console.log('Эта буква в верхнем регистре! -', letter);
+  // }
 
-    invertedString += letter === letter.toLowerCase()
-        ? letter.toUpperCase()
-        : letter.toLowerCase();     
+  invertedString +=
+    letter === letter.toLowerCase()
+      ? letter.toUpperCase()
+      : letter.toLowerCase();
 }
 
 console.log(invertedString);
-
 
 // Задача 9 Делаем slug в URL из названия статьи (например на dev.to)
 // Заголовок статьи состоит только из букв и пробелов.
@@ -468,7 +467,7 @@ console.log(invertedString);
 // Сшиваем в строку разделителями
 
 // Должно получиться top-10-benefits-of-react-framework
-const title = 'Top 10 benefits of React framework'
+const title = 'Top 10 benefits of React framework';
 // 1 Привести к нижнему регистру
 // const normalizedTitle = title.toLowerCase();
 // console.log(normalizedTitle);
@@ -485,7 +484,7 @@ const title = 'Top 10 benefits of React framework'
 // это называется цепочка вызовов метода
 // Повседневный код
 const slug1 = title.toLowerCase().split(' ').join('-');
-console.log(slug1)
+console.log(slug1);
 // вызыввется не на title а на результате работы предыдущего метода
 
 // Задача 10 Напиши скрипт который который считает сумму элементов двух массивов
@@ -513,7 +512,7 @@ let total = 0;
 const numbers = array1.concat(array2, [1, 2, 3], [90, 70]);
 
 for (const number of numbers) {
-    total += number;
+  total += number;
 }
 
 console.log(total);
@@ -532,11 +531,11 @@ console.log(total);
 // - Обновить
 
 const cards = [
-    'Карточка-1',
-    'Карточка-2',
-    'Карточка-3',
-    'Карточка-4',
-    'Карточка-5',
+  'Карточка-1',
+  'Карточка-2',
+  'Карточка-3',
+  'Карточка-4',
+  'Карточка-5',
 ];
 
 console.table(cards);
@@ -570,5 +569,3 @@ cards.splice(index, 1, 'Обновленная карточка-4');
 // на этом индексе удали эту строку и замени на новую строку
 
 console.table(cards);
-
-

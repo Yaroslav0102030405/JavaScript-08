@@ -386,10 +386,10 @@ const showProfileInfo = function (userProfile) {
 // Свойства должны называться так как хочет функция чтоб вашем обьекте они назывались это в документации можно посмотреть.
 
 const profile = {
-  name: 'Jacques Gluke',
-  tag: 'jgluke',
-  location: 'Ocho Rios, Jamaica',
-  avatar: 'https: фото',
+  name: "Jacques Gluke",
+  tag: "jgluke",
+  location: "Ocho Rios, Jamaica",
+  avatar: "https: фото",
   stats: {
     followers: 5603,
     views: 4827,

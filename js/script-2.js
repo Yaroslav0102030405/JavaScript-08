@@ -33,24 +33,24 @@
 //     case 1:
 //         price = 20;
 //         break;
-    
+
 //     case 2:
 //         price = 30;
 //         break;
-    
+
 //     case 3:
 //         price = 50;
 //         break;
-    
+
 //     case 4:
 //         price = 70;
 //         console.log('like')
 //         break;
-    
+
 //     case 5:
 //         price = 120;
 //         break;
-    
+
 //     default:
 //         console.log('Такого количество звезд нет')
 // }
@@ -73,7 +73,7 @@
 // } else {
 //     console.log('Такого количества звезд нет')
 // }
- 
+
 // console.log(price)
 
 // Задача 2 Улучшеине с switch
@@ -82,16 +82,16 @@
 //     case 2:
 //         price = 20;
 //         break;
-    
+
 //     case 3:
 //     case 4:
 //         price = 50;
 //         break;
-    
+
 //     case 5:
 //         price = 120;
 //         break;
-    
+
 //     default:
 //         console.log('Такого количество звезд нет')
 // }
@@ -120,7 +120,7 @@
 //     case 1:
 //         message = 'Вы можете забрать товар завтра с 12:00 в нашем офисе';
 //         break;
-    
+
 //     case 2:
 //         message = 'Курьер доставит заказ завтра с 9:00 до 18:00'
 //         break;
@@ -170,7 +170,6 @@
 // }
 // console.log('qwwe')
 
-
 // Пример с минус 1 как посчитатать в низ
 // for (let i = 10; i >= 0; i -= 1) {
 //     console.log(i)
@@ -192,13 +191,14 @@ let totalSalary = 0;
 
 // 2. перебрать работнико в цикле for
 for (let i = 1; i <= employees; i += 1) {
-    // 3. сгенерить случайную зарплату (число)
-    const salary = Math.round(Math.random() * (maxSalary - minSalary) + minSalary);
-    console.log(`ЗП работника номер ${i} - ${salary}`);
+  // 3. сгенерить случайную зарплату (число)
+  const salary = Math.round(
+    Math.random() * (maxSalary - minSalary) + minSalary,
+  );
+  console.log(`ЗП работника номер ${i} - ${salary}`);
 
-    // 4. прибавить к totalSalary
-    totalSalary += salary;
-
+  // 4. прибавить к totalSalary
+  totalSalary += salary;
 }
 
 // 5. лог
@@ -247,16 +247,16 @@ let total = 0;
 
 // 2. for от min до max с шагом +1
 for (let i = min; i <= max; i += 1) {
-    // console.log(i);
+  // console.log(i);
 
-    // 3. проверяем остаток от деления
-    if (i % 2 !== 0) {
-        // console.log('Не четное: ', i);
-        continue;
-    }
-    console.log('четное: ', i);
-    // 4. пишем сумму
-        total += i;
+  // 3. проверяем остаток от деления
+  if (i % 2 !== 0) {
+    // console.log('Не четное: ', i);
+    continue;
+  }
+  console.log('четное: ', i);
+  // 4. пишем сумму
+  total += i;
 }
 
 console.log('total: ', total);
@@ -316,22 +316,24 @@ let payment = 500;
 let discount = 0;
 
 if (totalSpent >= 100 && totalSpent < 1000) {
-    console.log('Бронзовый партнер, скидка 2%');
-    discount = 0.02;
+  console.log('Бронзовый партнер, скидка 2%');
+  discount = 0.02;
 } else if (totalSpent >= 1000 && totalSpent < 5000) {
-    console.log('Серебряный партнер, скидка 5%');
-    discount = 0.05;
+  console.log('Серебряный партнер, скидка 5%');
+  discount = 0.05;
 } else if (totalSpent >= 5000) {
-    console.log('Золотой партнер, скидка 10%');
-    discount = 0.1;
+  console.log('Золотой партнер, скидка 10%');
+  discount = 0.1;
 } else {
-    console.log('Не партнер, скидка 0%');
+  console.log('Не партнер, скидка 0%');
 }
 
 payment -= payment * discount;
 // payment = payment - payment * discount;
 
-console.log(`Оформляем заказ на сумму ${payment} со скидкой ${discount * 100}%`);
+console.log(
+  `Оформляем заказ на сумму ${payment} со скидкой ${discount * 100}%`,
+);
 
 totalSpent += payment;
 

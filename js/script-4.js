@@ -15,7 +15,7 @@
 //     console.log('Выполняется функция add');
 
 //     return a + b
-    // тут можеть быть одно значение число массив строка или другая цункция
+// тут можеть быть одно значение число массив строка или другая цункция
 // Вы где-то в памяти создали функцию и положили ее и она ничего не делает (этап обьявления функции)
 
 // Чтобы вызвать функцию вы пишите имя переменной и после имени ставите пкзатые скобочки
@@ -35,15 +35,14 @@
 
 // Чтобы что-то вернтуть из функции есть такая инструкия деректива return (возврат)
 
-
 // Где вы поставите retutn там функция прекратить прекратит выполнение
 // const fn = function (value) {
 //     console.log(1)
 //     console.log(2)
-    
+
 //     if (value < 50) {
 //         return 'Меньше чем 50'
-//     } 
+//     }
 //     // тут else не нужен
 //     return 'Больше чем 50'
 // }
@@ -208,7 +207,6 @@
 // Задача 2 95% случаев йункции что-то возвращают и 5% будет когда функция ничего не возвращает. Пример 5%
 // Напиши функцию logItems(items) для перебора и логирования массива
 
-
 // const logItems = function (items) {
 //     for (const item of items) {
 //         console.log(item)
@@ -325,24 +323,24 @@
 // каждого символа на противоположный
 // Например, если строка "JavaScript", то на выходе должна быть строка "jAVAsCRIPT"
 
-const changeCase = function (string = '') {
-    const letters = string.split('');
-    let invertedString = '';
+const changeCase = function (string = "") {
+  const letters = string.split("");
+  let invertedString = "";
 
-    for (const letter of letters) {
-        const isInLowerCase = letter === letter.toLowerCase();
+  for (const letter of letters) {
+    const isInLowerCase = letter === letter.toLowerCase();
 
-        invertedString += isInLowerCase
-            ? letter.toUpperCase()
-            : letter.toLowerCase();
-    }
-    
-return invertedString;
+    invertedString += isInLowerCase
+      ? letter.toUpperCase()
+      : letter.toLowerCase();
+  }
+
+  return invertedString;
 };
 
-console.log(changeCase('JavaScript'));
-console.log(changeCase('JAVAscript'));
-console.log(changeCase('JavaSCRIPT'));
+console.log(changeCase("JavaScript"));
+console.log(changeCase("JAVAscript"));
+console.log(changeCase("JavaSCRIPT"));
 
 // когда ты будешь использовать эту функцию ты просто ее вызываешь по имени понятно что она делате
 // и если тебе нужно понять как она работает
@@ -360,11 +358,11 @@ console.log(changeCase('JavaSCRIPT'));
 // Строка состоит только из букв и пробелов
 
 const slugily = function (string) {
-    return string.toLowerCase().split(' ').join('-');
+  return string.toLowerCase().split(" ").join("-");
 };
 
-console.log(slugily('Top 10 benefits of React framework'));
-console.log(slugily('Azure Static Web Apps are Awesome'));
+console.log(slugily("Top 10 benefits of React framework"));
+console.log(slugily("Azure Static Web Apps are Awesome"));
 
 // Програмирование это практика нужно решать заадачи иначе не работает
 // Все все выучат просто придет какое-то время
@@ -427,18 +425,18 @@ console.log(slugily('Azure Static Web Apps are Awesome'));
 // начиная со второго,
 // для которых есть аналог в оригинальном массиве.
 const filterNumbers = function (array, ...args) {
-    console.log('array', array);
-    console.log('args', args);
-    const uniqueElements = [];
+  console.log("array", array);
+  console.log("args", args);
+  const uniqueElements = [];
 
-    for (const element of array) {
-        if (args.includes(element)) {
-            uniqueElements.push(element);
+  for (const element of array) {
+    if (args.includes(element)) {
+      uniqueElements.push(element);
 
-            console.log(`${element} есть везде!`);
-        }
+      console.log(`${element} есть везде!`);
     }
-    return uniqueElements;
+  }
+  return uniqueElements;
 };
 
 console.log(filterNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8));
