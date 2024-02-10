@@ -53,11 +53,11 @@
 
 // - В строгом режиме = undefined
 // - Не встрогом режиме = window
-const foo = function () {
-  console.log("foo -> this", this);
-};
+// const foo = function () {
+//   console.log("foo -> this", this);
+// };
 
-foo();
+// foo();
 // функция вызвана без обьекта
 
 // итого 2 правала.
@@ -68,19 +68,19 @@ foo();
  * Как метод обьекта но обьявлена как внешняя функция.
  */
 // В контексте обьекта.
-const showTag = function () {
-  console.log("showTag -> this", this);
-  console.log("showTag -> this.tag", this.tag);
-};
+// const showTag = function () {
+//   console.log("showTag -> this", this);
+//   console.log("showTag -> this.tag", this.tag);
+// };
 
-const user = {
-  tag: "Mango",
-};
+// const user = {
+//   tag: "Mango",
+// };
 
-user.showTag = showTag;
-console.log("user", user);
+// user.showTag = showTag;
+// console.log("user", user);
 
-user.showTag();
+// user.showTag();
 
 // this - это не метод это локальная переменная которая есть только внутри функции
 
@@ -112,17 +112,30 @@ user.showTag();
 
 // Правило. При передаче методов callback контекст не сохранаеться не привязывается
 
-
 // разрешить получить геопозицию
-const onGetPositionSuccess = function (position) {
-  console.log(position)
-}
+// const onGetPositionSuccess = function (position) {
+//   console.log(position)
+// }
 
-const onGetPositionError = function (error) {
-console.log(error)
-}
+// const onGetPositionError = function (error) {
+// console.log(error)
+// }
 
-window.navigator.geolocation.getCurrentPosition(
-  onGetPositionSuccess,
-  onGetPositionError,
-)
+// window.navigator.geolocation.getCurrentPosition(
+//   onGetPositionSuccess,
+//   onGetPositionError,
+// )
+const user = {
+  tag: 'Mango',
+  showTag() {
+    console.log(this);
+  },
+};
+
+user.showTag();
+
+const foo = function () {
+  console.log(this);
+};
+
+foo();
